@@ -7,7 +7,7 @@ export default class App extends Component {
   state = {
     ninja: [
       { name: "Ndeme yvan", age: 30, belt: "Black", id: 1 },
-      { name: "Akah", age: 25, belt: "Yellow", id: 2 },
+      { name: "Akah", age: 15, belt: "Yellow", id: 2 },
       { name: "Olinga", age: 30, belt: "Morray", id: 3 },
     ],
   };
