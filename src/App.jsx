@@ -13,16 +13,25 @@ export default class App extends Component {
     ],
   };
 
+  //function like a props
+  addNinja = (ninja) => {
+    ninja.id = Math.random();
+    let newNinja = [...this.state.ninja, ninja];
+    this.setState({
+      ninja: newNinja,
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <h1>My first react app</h1>
         <p>Welcome to my first app !</p>
         {/* Add the ninja into the array */}
-        <AddNinja />
+        <AddNinja addNinja={this.addNinja} />
         <br />
         <Ninja
-          name="Ndeme Yvan "
+          name="Ndeme Yvan"
           age="25"
           belt="Black"
           ninjas={this.state.ninja}

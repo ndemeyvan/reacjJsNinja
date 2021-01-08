@@ -5,6 +5,7 @@ export default class componentName extends Component {
     name: null,
     age: null,
     belt: null,
+    id: null,
   };
   ///changer l'etat des variable de mon component base sur l'id de l'input
   
@@ -17,6 +18,7 @@ export default class componentName extends Component {
   ///validater le formulaire en annulant la reaction par defaut de mon formulaire.
   handleSubmitNinja = (e) => {
     e.preventDefault();
+    this.props.addNinja(this.state);
   };
 
   render() {
@@ -30,7 +32,7 @@ export default class componentName extends Component {
           <input type="number" id="age" onChange={this.handleChange}></input>
           <br />
           <label htmlFor="belt">Enter the belt of the ninja</label>
-          <input type="number" id="belt" onChange={this.handleChange}></input>
+          <input type="text" id="belt" onChange={this.handleChange}></input>
           <br />
           <button>Submit</button>
         </form>
