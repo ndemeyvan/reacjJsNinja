@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-
+import SecondComponent from './components/SecondComponents.jsx'
 function App() {
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -15,8 +16,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Welcome ndeme yvan , this is react js
+          click here to learn react
         </a>
+        
+        <SecondComponent/>
       </header>
     </div>
   );
