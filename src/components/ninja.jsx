@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class Ninja extends Component {
   render() {
-    const { name, age, belt, ninjas } = this.props;
+    const {  ninjas } = this.props;
     //generate a new list of element with the object get from
     //parent props
     const ninjaList = ninjas.map((ninja) => {
