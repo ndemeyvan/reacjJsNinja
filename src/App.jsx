@@ -1,18 +1,20 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import Ninja from './components/ninja'
+import React, { Component } from "react";
 
 
-function App() {
-  return (
-    <div className="App">
+export default class App extends Component {
+  render() {
+    return (
+      <div className="App">
       <h1>My first react app</h1>
       <p>Welcome to my first app !</p>
-      <Ninja/>
+      <Ninja name ="Ndeme Yvan " age = "25" belt="Black"/>
     </div>
-  );
-};
-
+    );
+  }
+}
 
 // function App() {
 
@@ -39,4 +41,3 @@ function App() {
 //   );
 // }
 
-export default App;
