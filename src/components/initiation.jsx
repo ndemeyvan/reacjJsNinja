@@ -6,6 +6,7 @@ export default class componentName extends Component {
     age: 0,
   };
 
+  //incremente la valeur de 1
   incrementButton = (e) => {
     var age = this.state.age;
     this.setState({
@@ -14,6 +15,8 @@ export default class componentName extends Component {
 
     console.log("This is state : ", this.state);
   };
+  
+  ///change la valeur au moment ou il ecrit
   isTyping = (e) => {
     var value = e.target.value;
     this.setState({
@@ -21,6 +24,7 @@ export default class componentName extends Component {
     });
     console.log("This is what you type : ", value);
   };
+
   //comment prevenir le comportement par defaut d'un ofrmulaire
     handleSubmitName = (e) => {
      e.preventDefault();
