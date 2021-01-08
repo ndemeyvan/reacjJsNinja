@@ -2,6 +2,7 @@
 import "./App.css";
 import Ninja from "./components/ninja";
 import React, { Component } from "react";
+import AddNinja from "./components/addNinja";
 
 export default class App extends Component {
   state = {
@@ -17,7 +18,15 @@ export default class App extends Component {
       <div className="App">
         <h1>My first react app</h1>
         <p>Welcome to my first app !</p>
-        <Ninja name="Ndeme Yvan " age="25" belt="Black" ninjas={this.state.ninja} />
+        {/* Add the ninja into the array */}
+        <AddNinja />
+        <br />
+        <Ninja
+          name="Ndeme Yvan "
+          age="25"
+          belt="Black"
+          ninjas={this.state.ninja}
+        />
       </div>
     );
   }
