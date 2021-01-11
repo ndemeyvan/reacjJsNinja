@@ -2,7 +2,10 @@
 import "./App.css";
 import Ninja from "./components/ninja";
 import React, { Component } from "react";
-import AddNinja from "./components/addNinja";
+// import AddNinja from "./components/addNinja";
+import NavBar from "./components/navBar";
+ ///sert pout les route equivalent a router outlet chez angular 
+// import { BrowserRouter } from "react-router-dom";
 
 export default class App extends Component {
   state = {
@@ -22,20 +25,34 @@ export default class App extends Component {
     });
   };
 
+
+  ///cpmponent life cycle  , quand le component est monte
+  componentDidMount() { 
+      console.log('Componet mounted ...');
+  }
+  //quand le component est update
+  componentDidUpdate(prevProps,prevState) { 
+    console.log('Component updated ');
+    console.log(prevProps, prevState);
+  }
+
   render() {
     return (
       <div className="App">
-        <h1>My first react app</h1>
+        <NavBar/>
+        
+        {/* <h1>My first react app</h1>
         <p>Welcome to my first app !</p>
         {/* Add the ninja into the array */}
-        <AddNinja addNinja={this.addNinja} />
+       {/* <AddNinja addNinja={this.addNinja} />
         <br />
         <Ninja
           name="Ndeme Yvan"
           age="25"
           belt="Black"
           ninjas={this.state.ninja}
-        />
+        /> */}
+
       </div>
     );
   }

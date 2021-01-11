@@ -20,7 +20,6 @@ const ninja = (props) => {
     // } else {
     //   return null;
     // }
-
     //ternary style
     return ninja.age > 20 ?       (
         <div className="ninjaList" key={ninja.id}>
@@ -33,10 +32,11 @@ const ninja = (props) => {
   });
 
   //////////screen
-  return (
+  return ( 
     <div className="ninja">
       {/* Output a list  */}
       {/* Utiliser les maps */}
+      
       {ninjaList}
     </div>
   );
