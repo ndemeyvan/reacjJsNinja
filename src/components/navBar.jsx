@@ -1,14 +1,20 @@
 import React, { Component } from "react";
+import { Link,NavLink,withRouter } from "react-router-dom";
+
 
 class navBar extends Component {
-  render() {
+    render() {
+       setTimeout(() => {
+         console.log("Try to redirect");
+         this.props.history.push("/about");
+       }, 2000);
     return (
       <div className="navBar">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <Link class="navbar-brand" to="/home">
               Navbar
-            </a>
+            </Link>
             <button
               class="navbar-toggler"
               type="button"
@@ -23,23 +29,19 @@ class navBar extends Component {
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    aria-current="page"
-                    href="/home"
-                  >
+                  <Link class="nav-link active" aria-current="page" to="/home">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/about">
+                  <Link class="nav-link" to="/about">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/contact">
+                  <Link class="nav-link" to="/contact">
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -50,4 +52,4 @@ class navBar extends Component {
   }
 }
 
-export default navBar;
+export default withRouter(navBar);
