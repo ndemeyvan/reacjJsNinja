@@ -15,12 +15,24 @@ export default class App extends Component {
 
   //function like a props
   addNinja = (ninja) => {
+    console.log('Try to add ninja');
+    
     ninja.id = Math.random();
     let newNinja = [...this.state.ninja, ninja];
     this.setState({
       ninja: newNinja,
     });
   };
+
+  //fonction qui sera passer comme un 
+  //props pour lancer la suppression depuis l'item
+  deleteNinja = (id)=>{
+    console.log(id);
+    let newNinja = this.state.ninja.filter((item) => item.id !== id);
+    this.setState({
+      ninja:newNinja,
+    })
+  }
 
   render() {
     return (
@@ -35,33 +47,11 @@ export default class App extends Component {
           age="25"
           belt="Black"
           ninjas={this.state.ninja}
+          deleteNinja={this.deleteNinja}
         />
       </div>
     );
   }
 }
 
-// function App() {
 
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           click here to learn react
-//         </a>
-
-//         <SecondComponent/>
-
-//       </header>
-//     </div>
-//   );
-// }

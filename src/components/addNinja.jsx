@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import './addNinja.css'
 
 export default class componentName extends Component {
   state = {
     name: null,
     age: null,
-    belt: null,
+    belt: null, 
     id: null,
   };
   ///changer l'etat des variable de mon component base sur l'id de l'input
@@ -23,7 +24,7 @@ export default class componentName extends Component {
 
   render() {
     return (
-      <div>
+      <div className='ninja'>
         <form onSubmit={this.handleSubmitNinja}>
           <label htmlFor="name">Enter the name ninja</label>
           <input type="text" id="name" onChange={this.handleChange}></input>
