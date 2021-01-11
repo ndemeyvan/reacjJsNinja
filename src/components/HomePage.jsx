@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import reactImage from "../react.jpg";
+
+
 
 class HomePage extends Component {
   state = {
@@ -23,8 +26,9 @@ class HomePage extends Component {
       posts.length > 0 ? (
         posts.map((post) => {
             return (
-              <div className="col-md-6" key={post.id}>
+              <div className="col-md-6 post" key={post.id}>
                 <div className="card">
+                  <img src={reactImage} class="card-img-top" alt="..."></img>
                   <div className="card-body">
                     <Link to={"/" + post.id}>
                       <h5 className="card-title">{post.title}</h5>
@@ -40,7 +44,7 @@ class HomePage extends Component {
         <div className="text-center"> No post </div>
       );
     return (
-      <div className="container">
+      <div className="container home">
         <h4 className="center">Home Page</h4>
         <p>
           In publishing and graphic design, Lorem ipsum is a placeholder text
