@@ -20,7 +20,7 @@ const ninja = (props) => {
             deleteNinja(ninja.id);
           }}
         >
-          Delete ninja
+          Delete ninja 
         </button>
         <br />
       </div>

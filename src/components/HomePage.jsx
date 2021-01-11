@@ -1,27 +1,28 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from 'react-router-dom';
 import reactImage from "../react.jpg";
-
+///connecter le component au store
+import { connect } from 'react-redux';
 
 
 class HomePage extends Component {
-  state = {
-    posts: [],
-  };
-  ///cpmponent life cycle  , quand le component est monte
-  componentDidMount() {
-    console.log("Componet mounted in home component...");
-    axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
-      console.log("Response : ", response);
-      this.setState({
-        posts: response.data,
-      });
-    });
-  }
+  // state = {
+  //   posts: [],
+  // };
+  // ///cpmponent life cycle  , quand le component est monte
+  // componentDidMount() {
+  //   console.log("Componet mounted in home component...");
+  //   // axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
+  //   //   console.log("Response : ", response);
+  //   //   this.setState({
+  //   //     posts: response.data,
+  //   //   });
+  //   // });
+  // }
 
   render() {
-    const { posts } = this.state;
+    const { posts } =this.props;
     const postList =
       posts.length > 0 ? (
         posts.map((post) => {
@@ -58,4 +59,10 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+const mapStateToProps = (state) => { 
+  return {
+    posts: state.posts
+  }
+}
+
+export default connect(mapStateToProps)(HomePage);
