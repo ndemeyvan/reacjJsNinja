@@ -28,10 +28,11 @@ const ninja = (props) => {
   });
 
   //////////screen
-  return (
+  return ( 
     <div className="ninja">
       {/* Output a list  */}
       {/* Utiliser les maps */}
+      
       {ninjaList}
     </div>
   );
