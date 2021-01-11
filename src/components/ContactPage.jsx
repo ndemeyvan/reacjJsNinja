@@ -4,10 +4,10 @@ class ContactPage extends Component {
   render() {
       ///navigation par code , apres 
       // un certain nombre de second 2 dans notre cas 
-    setTimeout(() => {
-      console.log("Try to redirect");
-      this.props.history.push("/home");
-    }, 2000);
+    // setTimeout(() => {
+    //   console.log("Try to redirect");
+    //   this.props.history.push("/home");
+    // }, 2000);
 
     return (
       <div className="container">
