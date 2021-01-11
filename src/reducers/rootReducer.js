@@ -1,6 +1,6 @@
 //ceci sont le svaleur initial
 const initState = {
-    name:"Ndeme yvan",
+    name: "Ndeme yvan",
     posts: [{
             id: 1,
             title: "Bonjour c'est ndeme",
@@ -12,7 +12,7 @@ const initState = {
             body: "In publishing of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available"
         }, {
             id: 3,
-            title: "B onjour c'est Nde",
+            title: "Bonjour c'est Nde",
             body: "In publishing of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available"
         }
     ]
