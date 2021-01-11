@@ -9,7 +9,7 @@ class navBar extends Component {
       <div className="navBar">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/home">
+            <Link className="navbar-brand" to="/">
               Navbar
             </Link>
             <button
@@ -26,7 +26,7 @@ class navBar extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/home">
+                  <Link className="nav-link active" aria-current="page" to="/">
                     Home
                   </Link>
                 </li>

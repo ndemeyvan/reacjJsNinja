@@ -4,12 +4,12 @@ import "./App.css";
 import React, { Component } from "react";
 // import AddNinja from "./components/addNinja";
 import NavBar from "./components/navBar";
- ///sert pout les route equivalent a router outlet chez angular 
-import { BrowserRouter } from "react-router-dom";
-import { Route } from "react-router-dom/cjs/react-router-dom.min";
+///sert pout les route equivalent a router outlet chez angular
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/HomePage";
 import About from "./components/AboutPage";
 import Contact from "./components/ContactPage";
+import PostDetail from "./components/PostDetail";
 
 export default class App extends Component {
   state = {
@@ -22,8 +22,8 @@ export default class App extends Component {
 
   //function like a props
   addNinja = (ninja) => {
-    console.log('Try to add ninja');
-    
+    console.log("Try to add ninja");
+
     ninja.id = Math.random();
     let newNinja = [...this.state.ninja, ninja];
     this.setState({
@@ -31,14 +31,13 @@ export default class App extends Component {
     });
   };
 
-
   ///cpmponent life cycle  , quand le component est monte
-  componentDidMount() { 
-      console.log('Componet mounted ...');
+  componentDidMount() {
+    console.log("Componet mounted ...");
   }
   //quand le component est update
-  componentDidUpdate(prevProps,prevState) { 
-    console.log('Component updated ');
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Component updated ");
     console.log(prevProps, prevState);
   }
 
@@ -47,12 +46,15 @@ export default class App extends Component {
       <BrowserRouter>
         <div className="App">
           <NavBar />
-          {/* Charge le component Home a la posoition initial */}
-          <Route path="/home" component={Home} />
-          {/* Ou alors <Route exact path='/' component={Home}/>
+          <Switch>
+            {/* Charge le component Home a la posoition initial */}
+            <Route exact path="/" component={Home} />
+            {/* Ou alors <Route exact path='/' component={Home}/>
           si on voulait utiliser le / uniquement */}
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/:post_id" component={PostDetail} />
+          </Switch>
           {/* <h1>My first react app</h1>
         <p>Welcome to my first app !</p>
         {/* Add the ninja into the array */}
@@ -69,5 +71,3 @@ export default class App extends Component {
     );
   }
 }
-
-

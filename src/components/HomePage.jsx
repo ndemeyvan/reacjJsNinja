@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 class HomePage extends Component {
   state = {
@@ -25,11 +26,11 @@ class HomePage extends Component {
               <div className="col-md-6" key={post.id}>
                 <div className="card">
                   <div className="card-body">
-                    <h5 className="card-title">{post.title}</h5>
+                    <Link to={"/" + post.id}>
+                      <h5 className="card-title">{post.title}</h5>
+                    </Link>
                     <p className="card-text">{post.body}</p>
-                    <a href="#" className="btn btn-primary">
-                      Go somewhere
-                    </a>
+                    <a className="btn btn-primary">Go somewhere</a>
                   </div>
                 </div>
               </div>
