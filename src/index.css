@@ -12,9 +12,4 @@ code {
     monospace;
 }
 
-.homePage img {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  opacity: 0.6;
-}
+
