@@ -29,7 +29,7 @@ class HomePage extends Component {
             return (
               <div className="col-md-6 post" key={post.id}>
                 <div className="card">
-                  <img src={reactImage} class="card-img-top" alt="..."></img>
+                  <img src={reactImage} className="card-img-top" alt="..."></img>
                   <div className="card-body">
                     <Link to={"/" + post.id}>
                       <h5 className="card-title">{post.title}</h5>

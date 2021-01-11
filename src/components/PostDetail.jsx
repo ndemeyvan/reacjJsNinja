@@ -18,11 +18,17 @@ class PostDetail extends Component {
     //   });
 
     console.log("This is the parameter in the props : ", this.props);
-  }
+  };
+
+  deletePost = () => {
+    this.props.deletePost(this.props.post.id);
+    this.props.history.push('/')
+  };
   render() {
+    console.log(this.props);
     
     const post =
-      this.props.post !== null ? (
+      this.props.post  ? (
         <div>
           <h4>{this.props.post.title}</h4>
           <h4>{this.props.post.body}</h4>
@@ -32,8 +38,9 @@ class PostDetail extends Component {
       );
     return (
       <div>
-        <h4>Route parameter</h4>
+      
         <div>{post}</div>
+        <button className='btn btn-primary' onClick={this.deletePost}>Delete post</button>
       </div>
     );
   }
@@ -44,4 +51,15 @@ const mapStateToProps = (state,ownProps) => {
       post: state.posts.find(((post) => post.id == id))
     }
 }
-export default connect(mapStateToProps)(PostDetail);
+
+const mapDispatchToProps = (dispatch) => { 
+  return {
+    deletePost: (id) => { 
+      dispatch({
+        type: "DELETE_POST",
+        id: id
+      })
+    }
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(PostDetail);
